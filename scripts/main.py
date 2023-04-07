@@ -5,15 +5,19 @@ cfg = Config()
 
 openai.api_key = cfg.openai_api_key
 
-def generate_chat_response(prompt):
+def generate_chat_response(user_prompt):
+    with open("input/prompt.txt", "r") as file:
+        system_prompt = file.read()
+
     response = openai.Completion.create(
         engine="text-davinci-002",
-        prompt=f"Create a YAML file based on the following description:\n\n{prompt}\n\nYAML:",
-        max_tokens=300,
+        prompt=f"Create a 20 second video script based on the following description:\n\n{user_prompt}\n\n{system_prompt}",
+        max_tokens=500,
         n=1,
         stop=None,
         temperature=0.7,
     )
+
     return response.choices[0].text.strip()
 
 def create_yml(prompt):

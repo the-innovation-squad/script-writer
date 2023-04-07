@@ -4,6 +4,8 @@ venv/
 
 # Inputs / Outputs
 input/*
+!input/prompt.txt
+
 output/*
 
 # System Files
