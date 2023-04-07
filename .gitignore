@@ -1,0 +1,13 @@
+# Env files
+.env
+venv/
+
+# Inputs / Outputs
+input/*
+output/*
+
+# System Files
+.DS_Store
+
+# Python Files
+__pycache__/
