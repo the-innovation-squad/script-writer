@@ -6,6 +6,11 @@ cfg = Config()
 openai.api_key = cfg.openai_api_key
 
 def generate_keyword_script(input_text):
+    if cfg.debug:
+        with open("lib/sample_keyword_script.yml", "r") as file:
+            sample_keyword_script = yaml.safe_load(file)
+        return sample_keyword_script
+
     with open("lib/instructions.txt", "r") as file:
         instructions = file.read()
 

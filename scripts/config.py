@@ -24,4 +24,15 @@ class Config(metaclass=Singleton):
     """
 
     def __init__(self):
+        self.debug = False
         self.openai_api_key = os.getenv("OPENAI_API_KEY")
+        self.pexels_api_key = os.getenv("PEXELS_API_KEY")
+
+    def set_debug(self, debug):
+        self.debug = debug
+
+    def update_from_args(self, args):
+        self.set_debug(args.debug)
+
+    def log_args(self):
+        print(f"Debug mode: {self.debug}")
