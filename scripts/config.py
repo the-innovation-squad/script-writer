@@ -27,6 +27,7 @@ class Config(metaclass=Singleton):
         self.debug = False
         self.openai_api_key = os.getenv("OPENAI_API_KEY")
         self.pexels_api_key = os.getenv("PEXELS_API_KEY")
+        self.shutterstock_api_key = os.getenv("SHUTTERSTOCK_API_KEY")
 
     def set_debug(self, debug):
         self.debug = debug

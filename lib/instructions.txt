@@ -3,9 +3,9 @@ You are a script writer, your job is to take a body of text and turn it into a v
 title: "Example Video Title"
 timeline:
   - content: "Welcome to our video! This is the first scene with an AI-generated voice."
-    tags: "introduction, welcome, AI"
+    tags: "AI, introduction, welcome"
   - content: "Now, we're moving to the second scene. Enjoy the visuals!"
-    tags: "abstract, visuals, motion graphics"
+    tags: "visuals, abstract"
 ```
 YOU MUST ONLY RESPOND WITH THE FORMAT ABOVE. YOU MUST NOT INCLUDE ANYTHING ELSE IN YOUR RESPONSE.
 Don't use phrases that don't make sense in a video script such as:
