@@ -7,17 +7,22 @@ openai.api_key = cfg.openai_api_key
 
 def generate_keyword_script(input_text):
     if cfg.debug:
-        with open("lib/sample_keyword_script.yml", "r") as file:
-            sample_keyword_script = yaml.safe_load(file)
-        return sample_keyword_script
+        with open("lib/tags_script.yml", "r") as file:
+            tags_script = yaml.safe_load(file)
+        return tags_script
 
     with open("lib/instructions.txt", "r") as file:
         instructions = file.read()
 
-    video_length_seconds = 30
-    instructions += f"The video should be {video_length_seconds} seconds long.\n"
-    instructions += "START INPUT TEXT:\n"
+    # to prevent the response from using too many tokens and cutting short
+    intended_video_length_seconds = 30
+    maximum_timeline_entries = 6
+    max_content_characters = 300
 
+    instructions += f"The video should be {intended_video_length_seconds} seconds long.\n"
+    instructions += f"The video should have a maximum of {maximum_timeline_entries} entries.\n"
+    instructions += f"Each content entry should be a maximum of {max_content_characters} characters.\n"
+    instructions += "START INPUT TEXT:\n"
     prompt = instructions + input_text
 
     response = openai.Completion.create(

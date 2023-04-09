@@ -34,6 +34,7 @@ timeline:
 ### Environment Variables
 - `OPENAI_API_KEY`: The API key for OpenAI, can be found at https://platform.openai.com/account/api-keys
 - `PEXELS_API_KEY`: The API key for Pexels, can be found at https://www.pexels.com/api/new/
+- `SHUTTERSTOCK_API_KEY`: The API key for Shutterstock, can be found at https://www.shutterstock.com/account/developers/apps
 
 ## 🚀 Running the App
 
