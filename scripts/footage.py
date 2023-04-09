@@ -16,7 +16,7 @@ def search_footage(keywords):
     else:
         print("Request failed with status code:", response.status_code)
         print("Response content:", response.content)
-        raise Exception("Plexels API search failed: " + response.content)
+        raise Exception("Pexels API search failed: " + response.content)
 
 def add_footage(keyword_script):
     for item in keyword_script["timeline"]:
