@@ -7,6 +7,7 @@ openai.api_key = cfg.openai_api_key
 
 def generate_keyword_script(input_text, script_options):
     if cfg.debug:
+        print("> DEBUG enabled, using pre-generated script...")
         with open("lib/script_no_footage.yml", "r") as file:
             script_no_footage = yaml.safe_load(file)
         return script_no_footage
