@@ -12,7 +12,7 @@ def generate_keyword_script(input_text, script_options):
             script_no_footage = yaml.safe_load(file)
         return script_no_footage
 
-    with open("lib/instructions.txt", "r") as file:
+    with open("lib/openai_prompt.txt", "r") as file:
         prompt = file.read()
 
     style = script_options["style"]
