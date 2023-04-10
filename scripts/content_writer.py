@@ -12,12 +12,12 @@ def generate_keyword_script(input_text, script_options):
         return tags_script
 
     with open("lib/instructions.txt", "r") as file:
-        instructions = file.read()
+        prompt = file.read()
 
     style = script_options["style"]
-    instructions += f"\nThe video should be {style}.\n"
-    instructions += "\n[START INPUT TEXT]\n"
-    prompt = instructions + input_text
+    prompt += f"\nThe video should be {style}.\n"
+    prompt += "\n[START INPUT TEXT]\n"
+    prompt =+ input_text
     prompt += "\n[END INPUT TEXT]"
 
     response = openai.Completion.create(
