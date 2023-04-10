@@ -12,6 +12,8 @@ def write_script():
 
         script_options = {
              "style": input_settings.get("script_style", "informative"),
+             "max_content_length": input_settings.get("max_content_length", 200),
+             "max_timeline_entries": input_settings.get("max_timeline_entries", 3)
         }
         footage_options = {
             "engine": input_settings.get("footage_engine", "pexels"),

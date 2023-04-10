@@ -1,5 +1,6 @@
 import openai
 import yaml
+from jinja2 import Template
 from config import Config
 cfg = Config()
 
@@ -12,11 +13,10 @@ def generate_keyword_script(input_text, script_options):
             script_no_footage = yaml.safe_load(file)
         return script_no_footage
 
-    with open("lib/openai_prompt.txt", "r") as file:
-        prompt = file.read()
-
-    style = script_options["style"]
-    prompt += f"\nThe video should be {style}.\n"
+    with open("lib/prompt_template.txt", "r") as file:
+        prompt_template_string = file.read()
+    prompt_template = Template(prompt_template_string)
+    prompt = prompt_template.render(script_options)
     prompt += "\n[START INPUT TEXT]\n"
     prompt += input_text
     prompt += "\n[END INPUT TEXT]"
