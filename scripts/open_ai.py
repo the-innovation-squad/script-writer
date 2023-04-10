@@ -14,7 +14,8 @@ def generate_keyword_script(input_text, script_options):
     with open("lib/instructions.txt", "r") as file:
         instructions = file.read()
 
-    instructions += f"\nThe video should be {script_options.style}.\n"
+    style = script_options["style"]
+    instructions += f"\nThe video should be {style}.\n"
     instructions += "\n[START INPUT TEXT]\n"
     prompt = instructions + input_text
     prompt += "\n[END INPUT TEXT]"

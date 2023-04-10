@@ -10,7 +10,7 @@ def write_script():
             input_settings = yaml.safe_load(file)
 
         script_options = {
-             "style": input_settings.get("style", "informative"),
+             "style": input_settings.get("script_style", "informative"),
         }
         footage_options = {
              "engine": input_settings.get("footage_engine", "pexels")
