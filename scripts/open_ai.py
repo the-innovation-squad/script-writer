@@ -19,20 +19,28 @@ def generate_keyword_script(input_text):
     maximum_timeline_entries = 6
     max_content_characters = 300
 
-    instructions += f"The video should be {intended_video_length_seconds} seconds long.\n"
-    instructions += f"The video should have a maximum of {maximum_timeline_entries} entries.\n"
-    instructions += f"Each content entry should be a maximum of {max_content_characters} characters.\n"
-    instructions += "START INPUT TEXT:\n"
+    style="informative"
+
+    # instructions += f"The video should be {intended_video_length_seconds} seconds long.\n"
+    # instructions += f"The video should have a maximum of {maximum_timeline_entries} entries.\n"
+    # instructions += f"Each content entry should be a maximum of {max_content_characters} characters.\n"
+    instructions += f"The video should be {style}.\n"
+    instructions += "\n[START INPUT TEXT]\n"
     prompt = instructions + input_text
+    prompt += "\n[END INPUT TEXT]"
 
     response = openai.Completion.create(
-        engine="text-davinci-002",
+        engine="text-davinci-003",
         prompt=prompt,
         max_tokens=1200,
         n=1,
         stop=None,
         temperature=0.7,
     )
+
     script_yaml_string = response.choices[0].text.strip()
+    with open("output/openai_response.txt", "w") as file:
+        file.write(script_yaml_string)
+
     script_yaml = yaml.safe_load(script_yaml_string)
     return script_yaml
