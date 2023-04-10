@@ -16,6 +16,7 @@ You'll also need an `input/settings.yml` file to specify the video settings. The
 
 ```yaml
 engine: "shutterstock" # one of ["shutterstock", "pexels"], default "pexels"
+style: "funny" # "informative" or "creative" or anything you'd like. Default "informative"
 ```
 
 ## ⚙️ Setup and Installation

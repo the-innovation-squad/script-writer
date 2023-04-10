@@ -9,11 +9,14 @@ def write_script():
         with open("input/settings.yml", "r") as file:
             input_settings = yaml.safe_load(file)
 
+        script_options = {
+             "style": input_settings.get("style", "informative"),
+        }
         footage_options = {
              "engine": input_settings.get("footage_engine", "pexels")
         }
 
-        keyword_script = generate_keyword_script(input_text)
+        keyword_script = generate_keyword_script(input_text, script_options)
         with open("output/tag_script.yml", "w") as outfile:
             yaml.dump(keyword_script, outfile, default_flow_style=False)
 
