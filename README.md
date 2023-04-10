@@ -19,7 +19,6 @@ footage_engine: "shutterstock" # one of ["shutterstock", "pexels"], default "pex
 footage_engine_settings:
   aspect_ratio: "16_9" # settings match the relevant API docs, check the code in scripts/footage_engines/ for specifics
 script_style: "funny" # "informative" or "creative" or anything you'd like. Default "informative"
-orientation: "landscape" # one of ["landscape", "portrait"], default "landscape"
 ```
 
 ## ⚙️ Setup and Installation
