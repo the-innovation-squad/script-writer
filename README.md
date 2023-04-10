@@ -23,6 +23,22 @@ max_content_length: 200 # max chacters in a scene's narration, default 200
 max_timeline_entries: 3 # max number of scenes, default 3
 ```
 
+## 🖨️ Example Output
+```yaml
+title: The Future of Transportation
+timeline:
+- clip: https://player.vimeo.com/external/408412129.hd.mp4?s=0dc8c5e810d75a1e02e8fc908cb199be129260d3&profile_id=170&oauth2_token_id=57447761
+  content: Imagine a world where flying cars, hyperloop trains, and autonomous vehicles
+    seamlessly navigate through bustling cities.
+- clip: https://player.vimeo.com/external/459027612.hd.mp4?s=b9828da270ea0d1c4fdec819e73771b95d00645d&profile_id=170&oauth2_token_id=57447761
+  content: Cutting-edge technology and advanced engineering have revolutionized the
+    way we commute, making travel faster, safer, and more environmentally friendly
+    than ever before.
+- clip: https://player.vimeo.com/external/646926076.hd.mp4?s=9eb7baa241006d075bc1a25a0a82a09c4607553e&profile_id=175&oauth_token_id=57447761
+  content: Join us on this exciting journey to uncover how these innovations are shaping
+    the future of transportation and redefining the limits of human mobility.
+```
+
 ## ⚙️ Setup and Installation
 
 1. Clone the repository to your local machine.
