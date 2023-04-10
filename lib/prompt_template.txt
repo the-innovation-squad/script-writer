@@ -25,7 +25,7 @@ timeline:
 
 YOU MUST ONLY RESPOND WITH THE YAML FORMAT ABOVE. YOU MUST NOT INCLUDE ANYTHING ELSE IN YOUR RESPONSE.
 EACH CONTENT BLOCK SHOULD BE NO MORE THAN {{max_content_length}} CHARACTERS LONG.
-THERE SHOULD BE A MAXIMUM OF {{max_timeline_entries}} TIMELINE_ENTRIES.
+THERE SHOULD BE A MAXIMUM OF {{max_timeline_entries}} TIMELINE ENTRIES.
 THE VIDEO SHOULD BE WRITTEN IN A {{style}} STYLE.
 
 Don't use phrases that don't make sense in a video script remember the content is the narration to a video. Bad phrases include:
