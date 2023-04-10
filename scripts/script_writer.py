@@ -1,5 +1,5 @@
 import yaml
-from open_ai import generate_keyword_script
+from content_writer import generate_keyword_script
 from footage import add_footage
 
 def write_script():
