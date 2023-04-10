@@ -33,6 +33,6 @@ def write_script():
         print("> Writing output...")
         with open("output/output.yml", "w") as outfile:
             yaml.dump(script_with_footage, outfile, default_flow_style=False)
-        print("> Done")
+        print("> Done.")
 
 
