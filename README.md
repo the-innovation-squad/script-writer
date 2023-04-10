@@ -1,5 +1,5 @@
 # 🎥 Script Writer
-This module is designed to convert text stories into video scripts using the YAML format and source appropriate footage to accompany the narration. It automates script formatting and optimization for video production.
+This module is designed to convert text stories into video scripts using the YAML format and source appropriate footage to accompany the narration. It automates script formatting and optimization for video production. These scripts can be rendered with the [content-renderer](https://github.com/the-innovation-squad/content-renderer).
 
 The project uses the OpenAI models to generate the video script and curates relevant footage based on the script content through:
 - Pexels API
