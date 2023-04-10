@@ -7,17 +7,17 @@ The electric vehicle revolution is reshaping the automobile industry. Advances i
 
 EXAMPLE OUTPUT:
 ```yaml
-title: "Electric Vehicle Revolution"
+title: Electric Vehicle Revolution
 timeline:
-  - content: "The electric vehicle revolution is reshaping the automobile industry."
+  - content: The electric vehicle revolution is reshaping the automobile industry.
     image_prompts:
       - electric vehicle industry
       - car
-  - content: "Advances in battery technology and charging infrastructure have accelerated EV adoption."
+  - content: Advances in battery technology and charging infrastructure have accelerated EV adoption.
     image_prompts:
       - EV charging station advancements
       - battery
-  - content: "Offering a more sustainable and accessible transportation option, electric vehicles are poised to become the dominant force on our roads."
+  - content: Offering a more sustainable and accessible transportation option, electric vehicles are poised to become the dominant force on our roads.
     image_prompts:
       - electric vehicles sustainable accessible
       - sustainabile transportation
