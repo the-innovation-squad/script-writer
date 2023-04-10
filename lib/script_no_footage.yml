@@ -1,0 +1,58 @@
+timeline:
+- content: "Matt Gialich knows the cosmic odds are against him, but he doesn\u2019\
+    t seem to care. Gialich is the co-founder of AstroForge, which aims to mine platinum\
+    \ from asteroids, process the materials in space, and then sell the refined commodities\
+    \ back on Earth."
+  image_prompts:
+  - asteroid mining
+  - space mining
+  - space industry
+  - astronaut
+- content: The company is slated to launch its first test mission Tuesday to demonstrate
+    key technologies that could finally turn asteroid mining into a reality. Later
+    this year, the startup has a second test flight planned to study a space rock
+    up close that could become a prime target for a real mining mission.
+  image_prompts:
+  - asteroid mission
+  - test mission
+  - space rock
+  - rocket launch
+- content: "For a company founded in 2021, it\u2019s a timeline that is so ambitious\
+    \ as to almost seem reckless. But with launch costs now a fraction of what they\
+    \ were a decade ago and a more robust commercial space economy than ever before,\
+    \ AstroForge and other deep-space mining startups are poised to pick up where\
+    \ others have failed."
+  image_prompts:
+  - commercial space economy
+  - launch costs
+  - space economy
+  - deep-space mining
+- content: "Gialich knows that if the tests are successful, they will transform not\
+    \ only his company, but also the entire space industry. 'If we work out, this\
+    \ is very, very lucrative,' he said. 'I don\u2019t hesitate to say it\u2019s probably\
+    \ the most valuable company ever created, if we\u2019re successful.'"
+  image_prompts:
+  - space industry transformation
+  - lucrative space industry
+  - space industry innovation
+  - space economy
+- content: Extracting precious metals in space is no easy task. For one, metal-rich
+    asteroids are less abundant than carbon-rich asteroids. 'Extracting valuable metals
+    is also extraordinarily difficult and technologically challenging,' said Richard
+    Binzel, an astronomer who retired last year after spending 33 years teaching planetary
+    science at the Massachusetts Institute of Technology.
+  image_prompts:
+  - asteroid mining technology
+  - space technology
+  - planetary science
+  - astronomer
+- content: "To overcome some of those technological hurdles, some companies have focused\
+    \ on mining water from icy deposits on the moon or space rocks first before jumping\
+    \ to precious metals. It\u2019s the kind of strategy being pursued by the United\
+    \ Kingdom-based Asteroid Mining Corp."
+  image_prompts:
+  - water from icy deposits
+  - moon mining
+  - asteroid mining
+  - space rocks
+title: 'Asteroid Mining: The New Frontier'

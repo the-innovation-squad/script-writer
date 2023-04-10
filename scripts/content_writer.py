@@ -7,9 +7,9 @@ openai.api_key = cfg.openai_api_key
 
 def generate_keyword_script(input_text, script_options):
     if cfg.debug:
-        with open("lib/tags_script.yml", "r") as file:
-            tags_script = yaml.safe_load(file)
-        return tags_script
+        with open("lib/script_no_footage.yml", "r") as file:
+            script_no_footage = yaml.safe_load(file)
+        return script_no_footage
 
     with open("lib/instructions.txt", "r") as file:
         prompt = file.read()
@@ -17,7 +17,7 @@ def generate_keyword_script(input_text, script_options):
     style = script_options["style"]
     prompt += f"\nThe video should be {style}.\n"
     prompt += "\n[START INPUT TEXT]\n"
-    prompt =+ input_text
+    prompt += input_text
     prompt += "\n[END INPUT TEXT]"
 
     response = openai.Completion.create(
