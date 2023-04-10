@@ -4,14 +4,13 @@ cfg = Config()
 
 def search_footage(prompt, footage_options, used_footage):
     orientation = footage_options["engine_settings"].get("orientation", "landscape")
-    print(orientation)
     per_page = 10
 
     headers = {
         "Content-Type": "application/json",
         "Authorization": cfg.pexels_api_key
     }
-    url=f"https://api.pexels.com/videos/search?query={prompt}&per_page={per_page}&orientation={orientation}"
+    url=f"https://api.pexels.com/videos/search?query=\"{prompt}\"&per_page={per_page}&orientation={orientation}"
     response = requests.get(url, headers=headers)
 
     if response.status_code == 200:
@@ -19,7 +18,9 @@ def search_footage(prompt, footage_options, used_footage):
         videos = results.get("videos")
         if videos:
             for video in videos:
-                clip = video.get("video_files")[0].get("link")
+                clips = video.get("video_files")
+                hd_clips = [clip for clip in clips if clip.get("quality") == "hd"]
+                clip = hd_clips[0].get("link")
                 if clip not in used_footage:
                     used_footage.append(clip)
                     return clip
