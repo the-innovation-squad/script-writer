@@ -8,13 +8,17 @@ def write_script():
             input_text = file.read()
         with open("input/settings.yml", "r") as file:
             input_settings = yaml.safe_load(file)
+        print("> Input Settings:", input_settings)
 
         script_options = {
              "style": input_settings.get("script_style", "informative"),
         }
         footage_options = {
-             "engine": input_settings.get("footage_engine", "pexels")
+            "engine": input_settings.get("footage_engine", "pexels"),
+            "engine_settings": input_settings.get("footage_engine_settings", {})
         }
+        print("> Script Options:", script_options)
+        print("> Footage Options:", footage_options)
 
         print("> Generating keyword script...")
         keyword_script = generate_keyword_script(input_text, script_options)
