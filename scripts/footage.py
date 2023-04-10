@@ -5,15 +5,15 @@ def add_footage(keyword_script, footage_options):
     engine = footage_options["engine"]
 
     for item in keyword_script["timeline"]:
-        tags = item["tags"]
+        prompts = item["image_prompts"]
 
         if engine == "pexels":
-            clip = pexels_search(tags)
+            clip = pexels_search(prompts)
         elif engine == "shutterstock":
-            clip = shutterstock_search(tags)
+            clip = shutterstock_search(prompts)
         else:
             raise Exception("Invalid footage engine: " + engine)
 
         item["clip"] = clip
-        del item["tags"]
+        del item["image_prompts"]
     return keyword_script
