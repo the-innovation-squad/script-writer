@@ -1,5 +1,5 @@
 import yaml
-from open_ai import generate_keyword_script
+from content_writer import generate_keyword_script
 from footage import add_footage
 
 def write_script():
@@ -9,11 +9,14 @@ def write_script():
         with open("input/settings.yml", "r") as file:
             input_settings = yaml.safe_load(file)
 
+        script_options = {
+             "style": input_settings.get("script_style", "informative"),
+        }
         footage_options = {
              "engine": input_settings.get("footage_engine", "pexels")
         }
 
-        keyword_script = generate_keyword_script(input_text)
+        keyword_script = generate_keyword_script(input_text, script_options)
         with open("output/tag_script.yml", "w") as outfile:
             yaml.dump(keyword_script, outfile, default_flow_style=False)
 
