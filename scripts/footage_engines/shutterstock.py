@@ -6,8 +6,10 @@ def search_footage(prompt, footage_options, used_footage):
     aspect_ratio = footage_options["engine_settings"].get("aspect_ratio", "16_9")
     per_page = 10
 
+    shutterstock_api_key = cfg.get_or_throw("shutterstock_api_key")
+
     headers = {
-        "Authorization": f"Bearer {cfg.shutterstock_api_key}"
+        "Authorization": f"Bearer {shutterstock_api_key}"
     }
     params = {
         "query": prompt,
