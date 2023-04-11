@@ -15,7 +15,7 @@ In this example input for the Script Writer project, we'll explore the world of 
 You'll also need an `input/settings.yml` file to specify the video settings. The settings file should be in the following format:
 
 ```yaml
-footage_engine: "shutterstock" # one of ["shutterstock", "pexels"], default "pexels"
+footage_engine: "shutterstock" # one of ["shutterstock", "pexels", "hugginggpt"], default "pexels"
 footage_engine_settings: # optional per engine settings, check the code in scripts/footage_engines/... for specifics & defaults
   aspect_ratio: "16_9"
 script_style: "funny" # "informative" or "creative" or anything you'd like, default "informative"

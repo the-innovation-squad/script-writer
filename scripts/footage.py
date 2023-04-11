@@ -1,5 +1,6 @@
 from footage_engines.pexels import search as pexels_search
 from footage_engines.shutterstock import search as shutterstock_search
+from footage_engines.hugginggpt import generate as hugginggpt_generate
 
 def add_footage(keyword_script, footage_options):
     engine = footage_options["engine"]
@@ -12,6 +13,8 @@ def add_footage(keyword_script, footage_options):
             clip = pexels_search(prompts, footage_options, used_footage)
         elif engine == "shutterstock":
             clip = shutterstock_search(prompts, footage_options, used_footage)
+        elif engine == "hugginggpt":
+            clip = hugginggpt_generate(prompts, footage_options)
         else:
             raise Exception("Invalid footage engine: " + engine)
 
