@@ -29,6 +29,12 @@ class Config(metaclass=Singleton):
         self.pexels_api_key = os.getenv("PEXELS_API_KEY")
         self.shutterstock_api_key = os.getenv("SHUTTERSTOCK_API_KEY")
 
+    def get_or_throw(self, key):
+        value = getattr(self, key)
+        if value is None:
+            raise Exception(f"Missing config value: {key}")
+        return value
+
     def set_debug(self, debug):
         self.debug = debug
 
