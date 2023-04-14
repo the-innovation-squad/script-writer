@@ -33,7 +33,9 @@ if __name__ == "__main__":
     clear_ouput_directory()
 
     args = configure_args()
+    config = {}
     config["debug"] = args.debug
+    config["output_dir"] = args.output if args.output else "output"
 
     if(args.prompt):
         prompt = args.prompt
@@ -41,4 +43,4 @@ if __name__ == "__main__":
         with open("input/text.txt", "r") as file:
             prompt = yaml.safe_load(file)
 
-    write_script(prompt, args.output)
+    write_script(prompt)
