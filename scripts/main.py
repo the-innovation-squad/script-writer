@@ -6,6 +6,7 @@ import argparse
 from config import config
 import os
 import shutil
+import yaml
 from script_writer import write_script
 
 def clear_ouput_directory():
@@ -21,14 +22,23 @@ def clear_ouput_directory():
 
 def configure_args():
     parser = argparse.ArgumentParser(description="Generate a video from a script.")
-    parser.add_argument("-d", "--debug", action="store_true", help="Enable debug mode")
-    args = parser.parse_args()
-    if (args.debug):
-        config["debug"] = True
-        print(f"Debug mode: {config['debug']}")
 
+    # positional arguments are based on the order they are defined here
+    parser.add_argument("-p", "--prompt", help="The prompt to generate a script from")
+    parser.add_argument("-o", "--output", help="The output directory to write the script to")
+    parser.add_argument("-d", "--debug", action="store_true", help="Enable debug mode")
+    return parser.parse_args()
 
 if __name__ == "__main__":
-    configure_args()
     clear_ouput_directory()
-    write_script()
+
+    args = configure_args()
+    config["debug"] = args.debug
+
+    if(args.prompt):
+        prompt = args.prompt
+    else:
+        with open("input/text.txt", "r") as file:
+            prompt = yaml.safe_load(file)
+
+    write_script(prompt, args.output)
