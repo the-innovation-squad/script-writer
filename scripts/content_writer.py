@@ -1,13 +1,12 @@
 import openai
 import yaml
 from jinja2 import Template
-from config import Config
-cfg = Config()
+from config import config
 
-openai.api_key = cfg.openai_api_key
+openai.api_key = config["OPENAI_API_KEY"]
 
 def generate_keyword_script(input_text, script_options):
-    if cfg.debug:
+    if config["debug"]:
         print("> DEBUG enabled, using pre-generated script...")
         with open("lib/script_no_footage.yml", "r") as file:
             script_no_footage = yaml.safe_load(file)
