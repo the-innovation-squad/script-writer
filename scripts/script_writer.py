@@ -1,4 +1,5 @@
 import yaml
+from config import config
 from content_writer import generate_keyword_script
 from footage import add_footage
 
@@ -11,12 +12,12 @@ def write_script():
         print("> Input Settings:", input_settings)
 
         script_options = {
-             "style": input_settings.get("script_style", "informative"),
-             "max_content_length": input_settings.get("max_content_length", 200),
-             "max_timeline_entries": input_settings.get("max_timeline_entries", 3)
+             "style": input_settings.get("script_style", config["script"]["style"]),
+             "max_content_length": input_settings.get("max_content_length", config["script"]["max_content_length"]),
+             "max_timeline_entries": input_settings.get("max_timeline_entries", config["script"]["max_timeline_entries"])
         }
         footage_options = {
-            "engine": input_settings.get("footage_engine", "pexels"),
+            "engine": input_settings.get("footage_engine", config["footage"]["engine"]),
             "engine_settings": input_settings.get("footage_engine_settings", {})
         }
         print("> Script Options:", script_options)

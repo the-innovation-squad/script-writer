@@ -1,9 +1,12 @@
+from dotenv import load_dotenv
+# Load environment variables from .env file
+load_dotenv()
+
 import argparse
+from config import config
 import os
 import shutil
 from script_writer import write_script
-from config import Config
-cfg = Config()
 
 def clear_ouput_directory():
     output_dir = "output"
@@ -20,8 +23,9 @@ def configure_args():
     parser = argparse.ArgumentParser(description="Generate a video from a script.")
     parser.add_argument("-d", "--debug", action="store_true", help="Enable debug mode")
     args = parser.parse_args()
-    cfg.update_from_args(args)
-    cfg.log_args()
+    if (args.debug):
+        config["debug"] = True
+        print(f"Debug mode: {config['debug']}")
 
 
 if __name__ == "__main__":
