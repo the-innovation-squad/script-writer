@@ -11,6 +11,7 @@ config = {
     "OPENAI_API_KEY": safe_load_env_var("OPENAI_API_KEY"),
     "PEXELS_API_KEY": safe_load_env_var("PEXELS_API_KEY"),
     "SHUTTERSTOCK_API_KEY": safe_load_env_var("SHUTTERSTOCK_API_KEY"),
+    "output_dir": "output",
     "script": {
         "style": "informative",
         "max_content_length": 200,
