@@ -41,6 +41,6 @@ if __name__ == "__main__":
         prompt = args.prompt
     else:
         with open("input/text.txt", "r") as file:
-            prompt = yaml.safe_load(file)
+            prompt = file.read()
 
     write_script(prompt)
