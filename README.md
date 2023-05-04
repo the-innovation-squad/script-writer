@@ -19,8 +19,7 @@ footage_engine: "shutterstock" # one of ["shutterstock", "pexels"], default "pex
 footage_engine_settings: # optional per engine settings, check the code in scripts/footage_engines/... for specifics & defaults
   aspect_ratio: "16_9"
 script_style: "funny" # "informative" or "creative" or anything you'd like, default "informative"
-max_content_length: 200 # max chacters in a scene's narration, default 200
-max_timeline_entries: 3 # max number of scenes, default 3
+duration: 60 # in seconds, default 30
 ```
 
 ## 🖨️ Example Output
