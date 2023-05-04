@@ -15,21 +15,19 @@ def generate_keyword_script(input_text, script_options):
     with open("lib/prompt_template.txt", "r") as file:
         prompt_template_string = file.read()
     prompt_template = Template(prompt_template_string)
-    prompt = prompt_template.render(script_options)
-    prompt += "\n[START INPUT TEXT]\n"
-    prompt += input_text
-    prompt += "\n[END INPUT TEXT]"
+    system_prompt = prompt_template.render(script_options)
 
-    response = openai.Completion.create(
-        engine="text-davinci-003",
-        prompt=prompt,
-        max_tokens=1200,
-        n=1,
-        stop=None,
-        temperature=0.7,
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": input_text}
+    ]
+
+    response = openai.ChatCompletion.create(
+        model="gpt-4",
+        messages=messages
     )
 
-    script_yaml_string = response.choices[0].text.strip()
+    script_yaml_string = response.choices[0].message['content'].strip()
     with open("output/openai_response.txt", "w") as file:
         file.write(script_yaml_string)
 

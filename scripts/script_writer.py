@@ -10,9 +10,8 @@ def write_script(prompt):
     print("> Input Settings:", input_settings)
 
     script_options = {
-            "style": input_settings.get("script_style", config["script"]["style"]),
-            "max_content_length": input_settings.get("max_content_length", config["script"]["max_content_length"]),
-            "max_timeline_entries": input_settings.get("max_timeline_entries", config["script"]["max_timeline_entries"])
+        "style": input_settings.get("script_style", config["script"]["style"]),
+        "duration": input_settings.get("duration", config["script"]["duration"])
     }
     footage_options = {
         "engine": input_settings.get("footage_engine", config["footage"]["engine"]),
