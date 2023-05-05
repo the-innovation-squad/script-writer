@@ -14,8 +14,7 @@ config = {
     "output_dir": "output",
     "script": {
         "style": "informative",
-        "max_content_length": 200,
-        "max_timeline_entries": 3
+        "duration": 30
     },
     "footage": {
         "engine": "pexels",
